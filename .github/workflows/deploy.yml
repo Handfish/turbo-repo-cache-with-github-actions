@@ -18,7 +18,7 @@ jobs:
           path: .turbo
           key: ${{ runner.os }}-turbo-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-turbo-${{ env.GITHUB_REF_NAME }}
+            ${{ runner.os }}-turbo-${{ env.GITHUB_REF }}
             ${{ runner.os }}-turbo-
 
       - name: Setup Node.js environment
