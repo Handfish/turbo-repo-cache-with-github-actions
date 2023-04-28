@@ -13,4 +13,5 @@ declare namespace App {
   // 1
   // 2
   // 3
+  // 4
 }
