@@ -2,6 +2,8 @@ name: Build with local github cache
 on:
   push:
     branches: [master]
+  pull_request:
+    types: [opened, reopened, edited]
 
 jobs:
   build:
@@ -16,7 +18,7 @@ jobs:
           path: .turbo
           key: ${{ runner.os }}-turbo-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-turbo-${{ env.GITHUB_HEAD_REF }}
+            ${{ runner.os }}-turbo-${{ github.ref_name }}
             ${{ runner.os }}-turbo-
 
       - name: Setup Node.js environment
